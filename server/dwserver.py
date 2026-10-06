@@ -80,6 +80,7 @@ for _name in ('playlists.patch', 'playlists.patch1', 'playlists.patch2', 'playli
 
 # MW3 bandwidth test: upload packets go to UDP 3074 and carry this cookie at offset 4 (told apart from NAT/IP tests)
 BW_PORT = 3074
+GAME_UDP_PORTS = (3074, 3075)          # the ports MW2 itself binds first (RPCS3 must not share them)
 BW_COOKIE = b'BWTEST01'
 
 # ---------------------------------------------------------------- state
@@ -589,6 +590,7 @@ def handle_udp(s, port, udp_seen):
         data, addr = s.recvfrom(65536)
     except OSError:                          # Windows: WSAECONNRESET after an ICMP "port unreachable"
         return
+    if SETTINGS['bind'].startswith('127.') and not addr[0].startswith('127.'):         return                               # local-only server: 3074 / 3075 listen on 0.0.0.0 (see open_sockets)
     if len(data) >= 12 and data[4:12] == BW_COOKIE:      # MW3 bandwidth test upload: count only
         BW['packets'] += 1
         BW['bytes'] += len(data)
@@ -629,7 +631,15 @@ def open_sockets():
     for p in EXTRA_UDP:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.bind((SETTINGS['bind'], p))
+            address = SETTINGS['bind']
+            if hasattr(socket, 'SO_EXCLUSIVEADDRUSE') and p in GAME_UDP_PORTS and address.startswith('127.'):
+                # Windows: RPCS3 binds the game's own UDP socket on 0.0.0.0:3074, which is allowed next to our
+                # 127.0.0.1:3074 - the game then sends from 127.0.0.1:3074 and our replies land in our own socket
+                # (NAT type stays "...", stuck at "Fetching Playlists"). Holding 0.0.0.0 exclusively makes
+                # the game take another port; packets from other PCs are still dropped (handle_udp).
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+                address = '0.0.0.0'
+            s.bind((address, p))
             udps[s] = p
         except OSError as e:
             log('udp %d: %s' % (p, e))
