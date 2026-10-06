@@ -1,0 +1,165 @@
+version 1
+
+rule party_gameStartTimerLength 10
+rule party_minlobbytime 30
+rule requireOpenNat 0
+
+gametype war
+name english "Team Deathmatch"
+script war
+teambased
+
+gametype dm
+name english "Free-for-all"
+script dm
+
+gametype sd
+name english "Search and Destroy"
+script sd
+teambased
+
+gametype dom
+name english "Domination"
+script dom
+teambased
+
+gametype conf
+name english "Kill Confirmed"
+script conf
+teambased
+
+gametype koth
+name english "Headquarters Pro"
+script koth
+teambased
+
+gametype dd
+name english "Demolition"
+script dd
+teambased
+
+gametype ctf
+name english "Capture the Flag"
+script ctf
+teambased
+
+// PLAYLIST DATA
+playlist 1
+name english "Team Deathmatch"
+description english "Team Deathmatch"
+maxparty 6
+rule party_minplayers 2
+rule party_maxplayers 12
+
+mp_alpha,war,1
+mp_bootleg,war,1
+mp_bravo,war,1
+mp_carbon,war,1
+mp_dome,war,1
+mp_exchange,war,1
+mp_hardhat,war,1
+mp_interchange,war,1
+mp_lambeth,war,1
+mp_mogadishu,war,1
+mp_paris,war,1
+mp_plaza2,war,1
+mp_radar,war,1
+mp_seatown,war,1
+mp_underground,war,1
+mp_village,war,1
+
+playlist 2
+name english "Free-for-all"
+description english "Free-for-all"
+maxparty 1
+rule party_minplayers 2
+rule party_maxplayers 8
+
+mp_alpha,dm,1
+mp_bootleg,dm,1
+mp_bravo,dm,1
+mp_carbon,dm,1
+mp_dome,dm,1
+mp_exchange,dm,1
+mp_hardhat,dm,1
+mp_interchange,dm,1
+mp_lambeth,dm,1
+mp_mogadishu,dm,1
+mp_paris,dm,1
+mp_plaza2,dm,1
+mp_radar,dm,1
+mp_seatown,dm,1
+mp_underground,dm,1
+mp_village,dm,1
+
+playlist 3
+name english "Search and Destroy"
+description english "Search and Destroy"
+maxparty 6
+rule party_minplayers 2
+rule party_maxplayers 12
+
+mp_alpha,sd,1
+mp_bootleg,sd,1
+mp_bravo,sd,1
+mp_carbon,sd,1
+mp_dome,sd,1
+mp_exchange,sd,1
+mp_hardhat,sd,1
+mp_interchange,sd,1
+mp_lambeth,sd,1
+mp_mogadishu,sd,1
+mp_paris,sd,1
+mp_plaza2,sd,1
+mp_radar,sd,1
+mp_seatown,sd,1
+mp_underground,sd,1
+mp_village,sd,1
+
+playlist 4
+name english "Domination"
+description english "Domination"
+maxparty 6
+rule party_minplayers 2
+rule party_maxplayers 12
+
+mp_alpha,dom,1
+mp_bootleg,dom,1
+mp_bravo,dom,1
+mp_carbon,dom,1
+mp_dome,dom,1
+mp_exchange,dom,1
+mp_hardhat,dom,1
+mp_interchange,dom,1
+mp_lambeth,dom,1
+mp_mogadishu,dom,1
+mp_paris,dom,1
+mp_plaza2,dom,1
+mp_radar,dom,1
+mp_seatown,dom,1
+mp_underground,dom,1
+mp_village,dom,1
+
+playlist 5
+name english "Kill Confirmed"
+description english "Kill Confirmed"
+maxparty 6
+rule party_minplayers 2
+rule party_maxplayers 12
+
+mp_alpha,conf,1
+mp_bootleg,conf,1
+mp_bravo,conf,1
+mp_carbon,conf,1
+mp_dome,conf,1
+mp_exchange,conf,1
+mp_hardhat,conf,1
+mp_interchange,conf,1
+mp_lambeth,conf,1
+mp_mogadishu,conf,1
+mp_paris,conf,1
+mp_plaza2,conf,1
+mp_radar,conf,1
+mp_seatown,conf,1
+mp_underground,conf,1
+mp_village,conf,1

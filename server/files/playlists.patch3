@@ -1,0 +1,1516 @@
+﻿version 504
+
+rule party_gameStartTimerLength 5
+rule scr_xpscale 1
+rule scr_restxp_enable 0
+rule requireOpenNat 1
+rule party_minlobbytime 30
+rule session_advertiseFailedSearchCount 10
+rule com_maxfps 0
+rule sv_network_fps 100
+set scr_airdrop_nuke 0
+set scr_airdrop_mega_nuke 0
+set scr_nuketimer 10
+set bg_fallDamageMaxHeight 300
+set bg_fallDamageMinHeight 128
+set bg_forceDualWield 0
+set bg_forceExplosiveBullets 0
+set bg_viewBobMax 8
+set bullet_penetration_enabled 1
+set com_timescale 1
+set friction 5.5
+set g_synchronousClients 0
+set jump_height 39
+set jump_ladderPushVel 128
+set jump_slowdownEnable 1
+set mantle_check_radius 0.1
+set mantle_check_angle 60
+set mantle_enable 1
+set player_backSpeedScale 1
+set player_breath_fire_delay 0
+set player_breath_gasp_lerp 6
+set player_breath_gasp_scale 4.5
+set player_breath_gasp_time 1
+set player_breath_hold_lerp 1
+set player_breath_hold_time 4.5
+set player_dmgtimer_minScale 0
+set player_footstepsThreshhold 60
+set player_lastStandCrawlSpeedScale 0.2
+set player_lastStandDebug 0
+set player_sprintForwardMinimum 105
+set player_sprintMinTime 1
+set player_sprintRechargePause 0
+set player_sprintSpeedScale 1.5
+set player_sprintTime 4
+set player_sprintUnlimited 0
+set player_strafeSpeedScale 1
+set player_view_pitch_down 70
+set player_view_pitch_up 70
+set sv_clientSideBullets 1
+set timescale 1
+set cg_drawThroughWalls 0
+set compassSize 1
+set hud_enable 1
+
+set bg_aimSpreadMoveSpeedThreshold 11
+set bg_maxGrenadeIndicatorSpeed 100
+set mantle_check_range 20
+set jump_spreadAdd 64
+set player_adsExitDelay 0
+set player_runbkThreshhold 60
+set player_sprintCameraBob 0.5
+set player_sprintStrafeSpeedScale 0.667
+set player_sprintThreshhold 185
+set stopspeed 100
+set cg_chatWithOtherTeams 0
+set compassEnemyFootstepEnabled 1
+set compassRadarUpdateTime 4.0
+set compassFastRadarUpdateTime 2.0
+set r_znear 4.0
+set r_znear_depthhack 0.1
+set developer 0
+set cg_drawShellshock 1
+set motionTrackerRange 1600.0
+set motionTrackerSweepInterval 3.0
+set motionTrackerSweepAngle 90.0
+
+set cg_scoreboardpingtext 1
+set cg_scoreboardpinggraph 0
+
+gametype tdm
+name english "Team Deathmatch"
+name french "Match à mort par équipe"
+name italian "Deathmatch a squadre"
+name german "Team-Deathmatch"
+name spanish "Duelo por equipos"
+name polish ""
+name russian ""
+name japanese ""
+script war
+teambased
+
+gametype 3p_tdm
+name english "3rd Person Team Deathmatch"
+name french "Match à mort équipe 3e personne"
+name italian "Deathmatch a squadre 3° P."
+name german "Externe Ansicht - Team-Deathmatch"
+name spanish "Duelo por equipos en TP"
+name polish ""
+name russian ""
+name japanese ""
+script war
+teambased
+rule scr_thirdperson 1
+rule scr_war_scorelimit 5000
+
+gametype hc_tdm
+name english "Hardcore Team Deathmatch"
+name french "Match à mort par équipe Hardcore."
+name italian "Deathmatch a squadre - veterano"
+name german "Hardcore-Team-Deathmatch"
+name spanish "Duelo por equipos extremo"
+name polish ""
+name russian ""
+name japanese ""
+script war
+teambased
+hardcore
+rule scr_team_fftype 1
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_war_playerrespawndelay 2
+rule scr_war_waverespawndelay 0
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+// ****DOMINATION****
+
+gametype dom
+name english "Domination"
+name french "Domination"
+name italian "Dominio"
+name german "Herrschaft"
+name spanish "Dominio"
+name polish ""
+name russian ""
+name japanese ""
+script dom
+teambased
+
+gametype hc_dom
+name english "Hardcore Domination"
+script dom
+teambased
+hardcore
+rule scr_hardcore 1
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_koth_timelimit 20
+
+gametype ric_dom
+name english "Hardcore Ricochet: Domination"
+script dom
+teambased
+hardcore
+rule scr_hardcore 1
+rule scr_player_healthregentime 0
+rule scr_team_fftype 2
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_koth_timelimit 20
+
+gametype 3p_dom
+name english "3rd Person Domination"
+name french "Domination 3e personne"
+name italian "Dominio 3° P."
+name german "Externe Ansicht - Herrschaft"
+name spanish "Dominio en TP"
+name polish ""
+name russian ""
+name japanese ""
+script dom
+teambased
+rule scr_thirdperson 1
+
+// ****HEADQUARTERS****
+
+gametype hq_pro
+name english "Headquarters Pro"
+name french "Quartier général Pro"
+name italian "QG Pro"
+name german "Hauptquartier Pro"
+name spanish "Cuarteles (Pro)"
+name polish ""
+name russian ""
+name japanese ""
+script koth
+teambased
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_koth_timelimit 20
+
+gametype 3p_hq_pro
+name english "3rd Person Headquarters Pro"
+name french "Quartier général Pro 3e personne"
+name italian "QG Pro 3° P."
+name german "Externe Ansicht - Hauptquartier Pro"
+name spanish "Cuarteles (Pro) en TP"
+name polish ""
+name russian ""
+name japanese ""
+script koth
+teambased
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_thirdperson 1
+rule scr_koth_timelimit 20
+
+gametype ric_hq_pro
+name english "Hardcore Ricochet: HQ Pro"
+name french "Ricochet Hardcore : Quartier général Pro"
+name italian "Ricochet veterano: QG Pro"
+name german "Hardcore-Querschläger: HQ Pro"
+name spanish "Extremo con rebote: Cuarteles (Pro)"
+name polish ""
+name russian ""
+name japanese ""
+script koth
+teambased
+hardcore
+rule scr_hardcore 1
+rule scr_player_healthregentime 0
+rule scr_team_fftype 2
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_koth_timelimit 20
+
+
+// ****OITC****
+gametype oitc
+name english "One in the Chamber"
+script oitc
+rule scr_dm_numlives 3
+rule scr_player_maxhealth 20
+rule scr_game_allowkillcam 1
+rule ui_showEndOfGame 1
+rule g_hardcore 1
+
+// ****SABOTAGE****
+
+gametype sab
+name english "Sabotage"
+name french "Sabotage"
+name italian "Sabotaggio"
+name german "Sabotage"
+name spanish "Sabotaje"
+name polish ""
+name russian ""
+name japanese ""
+script sab
+teambased
+rule scr_sab_bombtimer 45
+
+gametype 3p_sab
+name english "3rd Person Sabotage"
+name french "Sabotage 3e personne"
+name italian "Sabotaggio 3° P."
+name german "Externe Ansicht: Sabotage"
+name spanish "Sabotaje en TP"
+name polish ""
+name russian ""
+name japanese ""
+script sab
+teambased
+rule scr_thirdperson 1
+rule scr_sab_bombtimer 45
+
+gametype hc_sab //Created for hardcore sab
+name english "Hardcore Sabotage"
+script sab
+teambased
+hardcore
+rule scr_sab_bombtimer 30
+rule scr_team_fftype 1
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_war_waverespawndelay 15
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+// ****SEARCH AND DESTROY****
+
+gametype sd
+name english "Search and Destroy"
+name french "Recherche et destruction"
+name italian "Cerca e distruggi"
+name german "Suchen und Zerstören"
+name spanish "Buscar y destruir"
+name polish ""
+name russian ""
+name japanese ""
+script sd
+teambased
+
+gametype hc_sd
+name english "Hardcore Search and Destroy"
+name french "Recherche et destruction Hardcore"
+name italian "Cerca e distruggi - veterano"
+name german "Hardcore-Suchen und Zerstören"
+name spanish "Buscar y destruir extremo"
+name polish ""
+name russian ""
+name japanese ""
+script sd
+teambased
+hardcore
+rule scr_team_fftype 1
+rule scr_player_maxhealth 30
+rule scr_player_healthregentime 0
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+gametype ric_sd
+name english "Hardcore Search and Destroy"
+name french "Recherche et destruction Hardcore"
+name italian "Cerca e distruggi - veterano"
+name german "Hardcore-Suchen und Zerstören"
+name spanish "Buscar y destruir extremo"
+name polish ""
+name russian ""
+name japanese ""
+script sd
+teambased
+hardcore
+rule scr_team_fftype 2
+rule scr_player_maxhealth 30
+rule scr_player_healthregentime 0
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+gametype 3p_sd
+name english "3rd Person Search and Destroy"
+name french "Rech. & destr. 3e personne"
+name italian "Cerca e Distruggi 3° P."
+name german "Externe Ansicht - Suchen und Zerstören"
+name spanish "Buscar y destruir en TP"
+name polish ""
+name russian ""
+name japanese ""
+script sd
+teambased
+rule scr_thirdperson 1
+
+
+// ****ARENA****
+
+gametype arena
+name english "Arena"
+name french "Arène"
+name italian "Arena"
+name german "Arena"
+name spanish "Arena"
+name polish ""
+name russian ""
+name japanese ""
+script arena
+teambased
+
+// ****Demolition****
+
+gametype dd
+name english "Demolition"
+name french "Démolition"
+name italian "Demolizione"
+name german "Sprengkommando"
+name spanish "Demolición"
+name polish ""
+name russian ""
+name japanese ""
+script dd
+teambased
+
+gametype 3p_dd
+name english "3rd Person Demolition"
+name french "Démolition 3e personne"
+name italian "Demolizione 3° P."
+name german "Externe Ansicht - Sprengkommando"
+name spanish "Demolición en TP"
+name polish ""
+name russian ""
+name japanese ""
+script dd
+teambased
+rule scr_thirdperson 1
+
+gametype ric_dd
+name english "Hardcore Ricochet: Demolition"
+script dd
+teambased
+hardcore
+rule scr_hardcore 1
+rule scr_player_healthregentime 0
+rule scr_team_fftype 2
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+rule koth_spawntime 30
+rule scr_koth_scorelimit 200
+rule scr_koth_timelimit 20
+
+gametype hc_dd //Created for hardcore demolition
+name english "Hardcore Demolition"
+script dd
+teambased
+hardcore
+rule scr_team_fftype 1
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_war_waverespawndelay 15
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+// ****FREE FOR ALL****
+
+gametype ffa
+name english "Free-for-all"
+name french "Mêlée générale"
+name italian "Tutti contro tutti"
+name german "Frei für alle"
+name spanish "Duelo a muerte"
+name polish ""
+name russian ""
+name japanese ""
+script dm
+
+gametype hc_ffa
+name english "Hardcore Free-for-all"
+name french "Mêlée générale (Hardcore)"
+name italian "Tutti contro tutti - veterano"
+name german "Hardcore-Frei für alle"
+name spanish "Duelo a muerte extremo"
+name polish ""
+name russian ""
+name japanese ""
+script dm
+hardcore
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule set scr_dm_playerrespawndelay 7
+
+gametype cage_ffa
+name english "Cage Match"
+script dm
+rule scr_dm_scorelimit 1000
+rule scr_dm_timelimit 5
+rule scr_xpscale 4
+
+// ****CAPTURE THE FLAG****
+
+gametype ctf
+name english "Capture the Flag"
+name french "Capture du drapeau"
+name italian "Cattura la bandiera"
+name german "Capture the Flag"
+name spanish "Tomar la bandera"
+name polish ""
+name russian ""
+name japanese ""
+script ctf
+teambased
+
+gametype ric_ctf
+name english "Hardcore Ricochet CTF"
+script ctf
+teambased
+hardcore
+rule scr_team_fftype 2
+rule scr_player_maxhealth 30
+rule scr_player_healthregentime 0
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+gametype 3p_ctf
+name english "3rd Person Capture the Flag"
+name polish ""
+name russian ""
+name japanese ""
+script ctf
+teambased
+rule scr_thirdperson 1
+
+gametype hc_ctf	
+name english "Hardcore Capture the Flag"
+script ctf
+teambased
+hardcore
+rule scr_team_fftype 1
+rule scr_player_healthregentime 0
+rule scr_player_maxhealth 30
+rule scr_game_allowkillcam 1
+rule scr_hardcore 1
+rule ui_hud_hardcore 1
+rule g_hardcore 1
+
+gametype oneflag
+name english "One-Flag CTF"
+name french "CDD - 1 drapeau"
+name italian "CLB a una bandiera"
+name german "CTF - Eine Flagge"
+name spanish "TLB 1 bandera"
+name polish ""
+name russian ""
+name japanese ""
+script oneflag
+teambased
+rule scr_oneflag_roundswitch 1
+
+// ****Global Thermonuclear War****
+
+gametype nuke
+name english "Global Thermonuclear War"
+name french "Guerre thermonucléaire mondiale"
+name italian "Guerra termonucleare globale"
+name german "Thermonuklearer Krieg"
+name spanish "Guerra termonuclear global"
+name polish ""
+name russian ""
+name japanese ""
+script gtnw
+teambased
+rule scr_gtnw_waverespawndelay 1
+rule scr_gtnw_promode 0
+rule scr_gtnw_timelimit 6
+
+// PLAYLIST DATA
+playlist 1 // tdm gametype
+name english "Team Deathmatch"
+description english "Straight up Team Deathmatch.\nUse teamwork to kill enemy players and reach the score limit.\n\n__________\nPlayers: 8-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,tdm,4
+mp_boneyard,tdm,4
+mp_brecourt,tdm,4
+mp_checkpoint,tdm,4
+mp_derail,tdm,4
+mp_estate,tdm,4
+mp_favela,tdm,4
+mp_highrise,tdm,4
+mp_invasion,tdm,4
+mp_nightshift,tdm,4
+mp_quarry,tdm,4
+mp_rundown,tdm,4
+mp_rust,tdm,1
+mp_subbase,tdm,4
+mp_terminal,tdm,4
+mp_underpass,tdm,4
+mp_compact,tdm,4
+mp_complex,tdm,4
+mp_crash,tdm,4
+mp_overgrown,tdm,4
+mp_storm,tdm,4
+mp_strike,tdm,4
+mp_vacant,tdm,4
+mp_fuel2,tdm,4
+mp_abandon,tdm,4
+mp_trailerpark,tdm,4
+
+playlist 2 // hc_tdm hc_sd gametype
+name english "Hardcore Team Deathmatch"
+description english "Team Deathmatch with:\n\n\n__________\nPlayers:8-12\nLimited HUD\nExtra bullet damage\nFriendly Fire is ON"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+rule party_readypercentrequired 0
+
+mp_afghan,hc_tdm,1
+mp_boneyard,hc_tdm,1
+mp_brecourt,hc_tdm,1
+mp_checkpoint,hc_tdm,1
+mp_derail,hc_tdm,1
+mp_estate,hc_tdm,1
+mp_favela,hc_tdm,1
+mp_highrise,hc_tdm,1
+mp_invasion,hc_tdm,1
+mp_nightshift,hc_tdm,1
+mp_quarry,hc_tdm,1
+mp_rundown,hc_tdm,1
+mp_subbase,hc_tdm,1
+mp_terminal,hc_tdm,1
+mp_underpass,hc_tdm,1
+mp_compact,hc_tdm,1
+mp_complex,hc_tdm,1
+mp_crash,hc_tdm,1
+mp_overgrown,hc_tdm,1
+mp_storm,hc_tdm,1
+mp_strike,hc_tdm,1
+mp_vacant,hc_tdm,1
+mp_fuel2,hc_tdm,1
+mp_abandon,hc_tdm,1
+mp_trailerpark,hc_tdm,1
+
+playlist 3 // ffa gametype
+name english "Free-for-all"
+description english "Straight up Deathmatch.  Every man for himself.  Kill everyone.\n\n__________\nPlayers:4-8"
+unlockxp 0
+maxparty 1
+rule party_minplayers 4
+rule party_maxplayers 8
+rule party_matchedplayercount 4
+rule scr_dm_scorelimit 1500
+rule cg_everyonehearseveryone 1
+
+mp_afghan,ffa,4
+mp_boneyard,ffa,4
+mp_brecourt,ffa,4
+mp_checkpoint,ffa,4
+mp_estate,ffa,4
+mp_favela,ffa,4
+mp_highrise,ffa,4
+mp_invasion,ffa,4
+mp_nightshift,ffa,4
+mp_quarry,ffa,4
+mp_rundown,ffa,4
+mp_rust,ffa,1
+mp_subbase,ffa,4
+mp_terminal,ffa,4
+mp_underpass,ffa,4
+mp_compact,ffa,4
+mp_complex,ffa,4
+mp_crash,ffa,4
+mp_overgrown,ffa,4
+mp_storm,ffa,4
+mp_strike,ffa,4
+mp_vacant,ffa,4
+mp_fuel2,ffa,4
+mp_abandon,ffa,4
+mp_trailerpark,ffa,4
+
+playlist 4 // ctf gametype
+name english "Hardcore Free-for-all"
+description english "Straight up Deathmatch.  Every man for himself.  Kill everyone.\n\n__________\nPlayers:4-12\nLimited HUD\nExtra bullet damage"
+unlockxp 0
+maxparty 1
+rule party_minplayers 2
+rule party_maxplayers 8
+rule party_matchedplayercount 2
+rule scr_dm_scorelimit 1500
+rule cg_everyonehearseveryone 1
+
+mp_afghan,hc_ffa,4
+mp_boneyard,hc_ffa,4
+mp_brecourt,hc_ffa,4
+mp_checkpoint,hc_ffa,4
+//mp_derail,hc_ffa,4
+mp_estate,hc_ffa,8
+mp_favela,hc_ffa,4
+mp_highrise,hc_ffa,4
+mp_invasion,hc_ffa,4
+mp_nightshift,hc_ffa,8
+mp_quarry,hc_ffa,8
+mp_rundown,hc_ffa,4
+mp_rust,hc_ffa,4
+mp_subbase,hc_ffa,4
+mp_terminal,hc_ffa,8
+mp_underpass,hc_ffa,4
+mp_compact,hc_ffa,8
+mp_complex,hc_ffa,8
+mp_crash,hc_ffa,8
+mp_overgrown,hc_ffa,8
+mp_storm,hc_ffa,8
+mp_strike,hc_ffa,8
+mp_vacant,hc_ffa,8
+mp_fuel2,hc_ffa,8
+mp_abandon,hc_ffa,8
+mp_trailerpark,hc_ffa,8
+
+playlist 5
+name english "One in the Chamber"
+description english "One bullet. Three lives. No respawning. Will you succeed at this new game type?\n\n__________\nPlayers:8-14"
+unlockxp 0
+maxparty 1
+rule party_minplayers 8
+rule party_maxplayers 14
+rule party_matchedplayercount 1
+
+mp_boneyard,oitc,1
+mp_brecourt,oitc,1
+mp_checkpoint,oitc,1
+mp_favela,oitc,1
+mp_highrise,oitc,1
+mp_invasion,oitc,1
+mp_nightshift,oitc,1
+mp_quarry,oitc,1
+mp_rundown,oitc,1
+mp_subbase,oitc,1
+mp_terminal,oitc,1
+mp_compact,oitc,1
+mp_complex,oitc,1
+mp_crash,oitc,1
+mp_overgrown,oitc,1
+mp_storm,oitc,1
+mp_strike,oitc,1
+mp_vacant,oitc,1
+mp_abandon,oitc,1
+mp_trailerpark,oitc,1
+
+playlist 6 // big_tdm and dom gametype
+name english "Ground War"
+description english "Big team games - Team Deathmatch, Domination and Search and Destroy.\n\n__________\nPlayers:12-18"
+unlockxp 0
+maxparty 9
+rule party_minplayers 12
+rule party_maxplayers 18
+rule party_matchedplayercount 4
+rule scr_war_scorelimit 10000
+
+mp_afghan,dom,1
+mp_boneyard,dom,1
+mp_brecourt,dom,1
+mp_checkpoint,dom,1
+mp_derail,dom,1
+mp_estate,dom,1
+mp_favela,dom,1
+mp_highrise,dom,1
+mp_invasion,dom,1
+mp_nightshift,dom,1
+mp_quarry,dom,1
+mp_rundown,dom,1
+mp_subbase,dom,1
+mp_terminal,dom,1
+mp_underpass,dom,1
+mp_afghan,tdm,1
+mp_boneyard,tdm,1
+mp_brecourt,tdm,1
+mp_checkpoint,tdm,1
+mp_derail,tdm,1
+mp_estate,tdm,1
+mp_favela,tdm,1
+mp_highrise,tdm,1
+mp_invasion,tdm,1
+mp_nightshift,tdm,1
+mp_quarry,tdm,1
+mp_rundown,tdm,1
+mp_subbase,tdm,1
+mp_terminal,tdm,1
+mp_underpass,tdm,1
+mp_compact,tdm,1
+mp_complex,tdm,1
+mp_crash,tdm,1
+mp_overgrown,tdm,1
+mp_storm,tdm,1
+mp_compact,dom,1
+mp_complex,dom,1
+mp_crash,dom,1
+mp_overgrown,dom,1
+mp_storm,dom,1
+mp_strike,tdm,1
+mp_vacant,tdm,1
+mp_fuel2,tdm,1
+mp_abandon,tdm,1
+mp_trailerpark,tdm,1
+mp_strike,dom,1
+mp_vacant,dom,1
+mp_fuel2,dom,1
+mp_abandon,dom,1
+mp_trailerpark,dom,1
+
+playlist 7 // tdm gametype
+name english "Team Tactical"
+description english "Team based games with Team Deathmatch, Domination, Capture the Flag, Demolition, Sabotage, Search and Destroy, and Headquarters Pro.\n\n__________\nPlayers:6-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 6
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+rule scr_war_scorelimit 5000
+
+mp_afghan,tdm,1
+mp_boneyard,tdm,1
+mp_estate,tdm,1
+mp_favela,tdm,1
+mp_highrise,tdm,1
+mp_rust,tdm,1
+mp_subbase,tdm,1
+mp_terminal,tdm,1
+mp_afghan,ctf,1
+mp_boneyard,ctf,1
+mp_estate,ctf,1
+mp_favela,ctf,1
+mp_highrise,ctf,1
+mp_rust,ctf,1
+mp_subbase,ctf,1
+mp_terminal,ctf,1
+mp_afghan,dom,1
+mp_boneyard,dom,1
+mp_estate,dom,1
+mp_favela,dom,1
+mp_highrise,dom,1
+mp_rust,dom,1
+mp_subbase,dom,1
+mp_terminal,dom,1
+mp_afghan,dd,1
+mp_boneyard,dd,1
+mp_estate,dd,1
+mp_favela,dd,1
+mp_highrise,dd,1
+mp_rust,dd,1
+mp_subbase,dd,1
+mp_terminal,dd,1
+mp_compact,tdm,1
+mp_complex,tdm,1
+mp_crash,tdm,1
+mp_overgrown,tdm,1
+mp_storm,tdm,1
+mp_compact,ctf,1
+mp_complex,ctf,1
+mp_crash,ctf,1
+mp_overgrown,ctf,1
+mp_storm,ctf,1
+mp_compact,dom,1
+mp_complex,dom,1
+mp_crash,dom,1
+mp_overgrown,dom,1
+mp_storm,dom,1
+mp_compact,dd,1
+mp_complex,dd,1
+mp_crash,dd,1
+mp_overgrown,dd,1
+mp_storm,dd,1
+mp_strike,tdm,1
+mp_vacant,tdm,1
+mp_fuel2,tdm,1
+mp_abandon,tdm,1
+mp_trailerpark,tdm,1
+mp_strike,ctf,1
+mp_vacant,ctf,1
+mp_fuel2,ctf,1
+mp_abandon,ctf,1
+mp_trailerpark,ctf,1
+mp_strike,dom,1
+mp_vacant,dom,1
+mp_fuel2,dom,1
+mp_abandon,dom,1
+mp_trailerpark,dom,1
+mp_strike,dd,1
+mp_vacant,dd,1
+mp_fuel2,dd,1
+mp_abandon,dd,1
+mp_trailerpark,dd,1
+mp_afghan,sd,1
+mp_boneyard,sd,1
+mp_brecourt,sd,1
+mp_checkpoint,sd,1
+mp_derail,sd,1
+mp_estate,sd,1
+mp_favela,sd,1
+mp_highrise,sd,1
+mp_invasion,sd,1
+mp_nightshift,sd,1
+mp_quarry,sd,1
+mp_rundown,sd,1
+mp_subbase,sd,1
+mp_terminal,sd,1
+mp_underpass,sd,1
+mp_compact,sd,1
+mp_complex,sd,1
+mp_crash,sd,1
+mp_overgrown,sd,1
+mp_storm,sd,1
+mp_strike,sd,1
+mp_vacant,sd,1
+mp_fuel2,sd,1
+mp_abandon,sd,1
+mp_trailerpark,sd,1
+mp_afghan,hq_pro,1
+mp_boneyard,hq_pro,1
+mp_brecourt,hq_pro,1
+mp_checkpoint,hq_pro,1
+mp_derail,hq_pro,1
+mp_estate,hq_pro,1
+mp_favela,hq_pro,1
+mp_highrise,hq_pro,1
+mp_invasion,hq_pro,1
+mp_nightshift,hq_pro,1
+mp_quarry,hq_pro,1
+mp_rundown,hq_pro,1
+mp_subbase,hq_pro,1
+mp_terminal,hq_pro,1
+mp_underpass,hq_pro,1
+mp_compact,hq_pro,1
+mp_complex,hq_pro,1
+mp_crash,hq_pro,1
+mp_overgrown,hq_pro,1
+mp_storm,hq_pro,1
+mp_strike,hq_pro,1
+mp_vacant,hq_pro,1
+mp_fuel2,hq_pro,1
+mp_abandon,hq_pro,1
+mp_trailerpark,hq_pro,1
+mp_afghan,sab,1
+mp_boneyard,sab,1
+mp_brecourt,sab,1
+mp_checkpoint,sab,1
+mp_derail,sab,1
+mp_estate,sab,1
+mp_favela,sab,1
+mp_highrise,sab,1
+mp_invasion,sab,1
+mp_nightshift,sab,1
+mp_quarry,sab,1
+mp_rundown,sab,1
+mp_subbase,sab,1
+mp_terminal,sab,1
+mp_underpass,sab,1
+mp_compact,sab,1
+mp_complex,sab,1
+mp_crash,sab,1
+mp_overgrown,sab,1
+mp_storm,sab,1
+mp_strike,sab,1
+mp_vacant,sab,1
+mp_fuel2,sab,1
+mp_abandon,sab,1
+mp_trailerpark,sab,1
+
+playlist 8 // tdm gametype
+name english "Hardcore Team Tactical"
+description english "Team based games with Team Deathmatch, Domination, Capture the Flag, Demolition, Sabotage, Search and Destroy, and Headquarters Pro.\n\n__________\nPlayers:6-12\nLimited HUD\nExtra bullet damage"
+unlockxp 0
+maxparty 6
+rule party_minplayers 6
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+rule scr_war_scorelimit 5000
+
+mp_afghan,hc_tdm,1
+mp_boneyard,hc_tdm,1
+mp_estate,hc_tdm,1
+mp_favela,hc_tdm,1
+mp_highrise,hc_tdm,1
+mp_rust,hc_tdm,1
+mp_subbase,hc_tdm,1
+mp_terminal,hc_tdm,1
+mp_afghan,hc_ctf,1
+mp_boneyard,hc_ctf,1
+mp_estate,hc_ctf,1
+mp_favela,hc_ctf,1
+mp_highrise,hc_ctf,1
+mp_rust,hc_ctf,1
+mp_subbase,hc_ctf,1
+mp_terminal,hc_ctf,1
+mp_afghan,hc_dom,1
+mp_boneyard,hc_dom,1
+mp_estate,hc_dom,1
+mp_favela,hc_dom,1
+mp_highrise,hc_dom,1
+mp_rust,hc_dom,1
+mp_subbase,hc_dom,1
+mp_terminal,hc_dom,1
+mp_afghan,hc_dd,1
+mp_boneyard,hc_dd,1
+mp_estate,hc_dd,1
+mp_favela,hc_dd,1
+mp_highrise,hc_dd,1
+mp_rust,hc_dd,1
+mp_subbase,hc_dd,1
+mp_terminal,hc_dd,1
+mp_compact,hc_tdm,1
+mp_complex,hc_tdm,1
+mp_crash,hc_tdm,1
+mp_overgrown,hc_tdm,1
+mp_storm,hc_tdm,1
+mp_compact,hc_ctf,1
+mp_complex,hc_ctf,1
+mp_crash,hc_ctf,1
+mp_overgrown,hc_ctf,1
+mp_storm,hc_ctf,1
+mp_compact,hc_dom,1
+mp_complex,hc_dom,1
+mp_crash,hc_dom,1
+mp_overgrown,hc_dom,1
+mp_storm,hc_dom,1
+mp_compact,hc_dd,1
+mp_complex,hc_dd,1
+mp_crash,hc_dd,1
+mp_overgrown,hc_dd,1
+mp_storm,hc_dd,1
+mp_strike,hc_tdm,1
+mp_vacant,hc_tdm,1
+mp_fuel2,hc_tdm,1
+mp_abandon,hc_tdm,1
+mp_trailerpark,hc_tdm,1
+mp_strike,hc_ctf,1
+mp_vacant,hc_ctf,1
+mp_fuel2,hc_ctf,1
+mp_abandon,hc_ctf,1
+mp_trailerpark,hc_ctf,1
+mp_strike,hc_dom,1
+mp_vacant,hc_dom,1
+mp_fuel2,hc_dom,1
+mp_abandon,hc_dom,1
+mp_trailerpark,hc_dom,1
+mp_strike,hc_dd,1
+mp_vacant,hc_dd,1
+mp_fuel2,hc_dd,1
+mp_abandon,hc_dd,1
+mp_trailerpark,hc_dd,1
+mp_afghan,hc_sd,1
+mp_boneyard,hc_sd,1
+mp_brecourt,hc_sd,1
+mp_checkpoint,hc_sd,1
+mp_derail,hc_sd,1
+mp_estate,hc_sd,1
+mp_favela,hc_sd,1
+mp_highrise,hc_sd,1
+mp_invasion,hc_sd,1
+mp_nightshift,hc_sd,1
+mp_quarry,hc_sd,1
+mp_rundown,hc_sd,1
+mp_subbase,hc_sd,1
+mp_terminal,hc_sd,1
+mp_underpass,hc_sd,1
+mp_compact,hc_sd,1
+mp_complex,hc_sd,1
+mp_crash,hc_sd,1
+mp_overgrown,hc_sd,1
+mp_storm,hc_sd,1
+mp_strike,hc_sd,1
+mp_vacant,hc_sd,1
+mp_fuel2,hc_sd,1
+mp_abandon,hc_sd,1
+mp_trailerpark,hc_sd,1
+mp_afghan,ric_hq_pro,1
+mp_boneyard,ric_hq_pro,1
+mp_brecourt,ric_hq_pro,1
+mp_checkpoint,ric_hq_pro,1
+mp_derail,ric_hq_pro,1
+mp_estate,ric_hq_pro,1
+mp_favela,ric_hq_pro,1
+mp_highrise,ric_hq_pro,1
+mp_invasion,ric_hq_pro,1
+mp_nightshift,ric_hq_pro,1
+mp_quarry,ric_hq_pro,1
+mp_rundown,ric_hq_pro,1
+mp_subbase,ric_hq_pro,1
+mp_terminal,ric_hq_pro,1
+mp_underpass,ric_hq_pro,1
+mp_compact,ric_hq_pro,1
+mp_complex,ric_hq_pro,1
+mp_crash,ric_hq_pro,1
+mp_overgrown,ric_hq_pro,1
+mp_storm,ric_hq_pro,1
+mp_strike,ric_hq_pro,1
+mp_vacant,ric_hq_pro,1
+mp_fuel2,ric_hq_pro,1
+mp_abandon,ric_hq_pro,1
+mp_trailerpark,ric_hq_pro,1
+mp_afghan,hc_sab,1
+mp_boneyard,hc_sab,1
+mp_brecourt,hc_sab,1
+mp_checkpoint,hc_sab,1
+mp_derail,hc_sab,1
+mp_estate,hc_sab,1
+mp_favela,hc_sab,1
+mp_highrise,hc_sab,1
+mp_invasion,hc_sab,1
+mp_nightshift,hc_sab,1
+mp_quarry,hc_sab,1
+mp_rundown,hc_sab,1
+mp_subbase,hc_sab,1
+mp_terminal,hc_sab,1
+mp_underpass,hc_sab,1
+mp_compact,hc_sab,1
+mp_complex,hc_sab,1
+mp_crash,hc_sab,1
+mp_overgrown,hc_sab,1
+mp_storm,hc_sab,1
+mp_strike,hc_sab,1
+mp_vacant,hc_sab,1
+mp_fuel2,hc_sab,1
+mp_abandon,hc_sab,1
+mp_trailerpark,hc_sab,1
+
+playlist 9 // tdm gametype
+name english "3rd Person Team Tactical"
+description english "Team Tactical from a 3rd person perspective.\n\n__________\nPlayers:6-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 6
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+rule scr_war_scorelimit 5000
+
+mp_afghan,3p_tdm,1
+mp_boneyard,3p_tdm,1
+mp_estate,3p_tdm,1
+mp_favela,3p_tdm,1
+mp_highrise,3p_tdm,1
+mp_rust,3p_tdm,1
+mp_subbase,3p_tdm,1
+mp_terminal,3p_tdm,1
+mp_afghan,3p_ctf,1
+mp_boneyard,3p_ctf,1
+mp_estate,3p_ctf,1
+mp_favela,3p_ctf,1
+mp_highrise,3p_ctf,1
+mp_rust,3p_ctf,1
+mp_subbase,3p_ctf,1
+mp_terminal,3p_ctf,1
+mp_afghan,3p_dom,1
+mp_boneyard,3p_dom,1
+mp_estate,3p_dom,1
+mp_favela,3p_dom,1
+mp_highrise,3p_dom,1
+mp_rust,3p_dom,1
+mp_subbase,3p_dom,1
+mp_terminal,3p_dom,1
+mp_afghan,3p_dd,1
+mp_boneyard,3p_dd,1
+mp_estate,3p_dd,1
+mp_favela,3p_dd,1
+mp_highrise,3p_dd,1
+mp_rust,3p_dd,1
+mp_subbase,3p_dd,1
+mp_terminal,3p_dd,1
+mp_compact,3p_tdm,1
+mp_complex,3p_tdm,1
+mp_crash,3p_tdm,1
+mp_overgrown,3p_tdm,1
+mp_storm,3p_tdm,1
+mp_compact,3p_ctf,1
+mp_complex,3p_ctf,1
+mp_crash,3p_ctf,1
+mp_overgrown,3p_ctf,1
+mp_storm,3p_ctf,1
+mp_compact,3p_dom,1
+mp_complex,3p_dom,1
+mp_crash,3p_dom,1
+mp_overgrown,3p_dom,1
+mp_storm,3p_dom,1
+mp_compact,3p_dd,1
+mp_complex,3p_dd,1
+mp_crash,3p_dd,1
+mp_overgrown,3p_dd,1
+mp_storm,3p_dd,1
+mp_strike,3p_tdm,1
+mp_vacant,3p_tdm,1
+mp_fuel2,3p_tdm,1
+mp_abandon,3p_tdm,1
+mp_trailerpark,3p_tdm,1
+mp_strike,3p_ctf,1
+mp_vacant,3p_ctf,1
+mp_fuel2,3p_ctf,1
+mp_abandon,3p_ctf,1
+mp_trailerpark,3p_ctf,1
+mp_strike,3p_dom,1
+mp_vacant,3p_dom,1
+mp_fuel2,3p_dom,1
+mp_abandon,3p_dom,1
+mp_trailerpark,3p_dom,1
+mp_strike,3p_dd,1
+mp_vacant,3p_dd,1
+mp_fuel2,3p_dd,1
+mp_abandon,3p_dd,1
+mp_trailerpark,3p_dd,1
+mp_afghan,3p_sd,1
+mp_boneyard,3p_sd,1
+mp_brecourt,3p_sd,1
+mp_checkpoint,3p_sd,1
+mp_derail,3p_sd,1
+mp_estate,3p_sd,1
+mp_favela,3p_sd,1
+mp_highrise,3p_sd,1
+mp_invasion,3p_sd,1
+mp_nightshift,3p_sd,1
+mp_quarry,3p_sd,1
+mp_rundown,3p_sd,1
+mp_subbase,3p_sd,1
+mp_terminal,3p_sd,1
+mp_underpass,3p_sd,1
+mp_compact,3p_sd,1
+mp_complex,3p_sd,1
+mp_crash,3p_sd,1
+mp_overgrown,3p_sd,1
+mp_storm,3p_sd,1
+mp_strike,3p_sd,1
+mp_vacant,3p_sd,1
+mp_fuel2,3p_sd,1
+mp_abandon,3p_sd,1
+mp_trailerpark,3p_sd,1
+mp_afghan,3p_hq_pro,1
+mp_boneyard,3p_hq_pro,1
+mp_brecourt,3p_hq_pro,1
+mp_checkpoint,3p_hq_pro,1
+mp_derail,3p_hq_pro,1
+mp_estate,3p_hq_pro,1
+mp_favela,3p_hq_pro,1
+mp_highrise,3p_hq_pro,1
+mp_invasion,3p_hq_pro,1
+mp_nightshift,3p_hq_pro,1
+mp_quarry,3p_hq_pro,1
+mp_rundown,3p_hq_pro,1
+mp_subbase,3p_hq_pro,1
+mp_terminal,3p_hq_pro,1
+mp_underpass,3p_hq_pro,1
+mp_compact,3p_hq_pro,1
+mp_complex,3p_hq_pro,1
+mp_crash,3p_hq_pro,1
+mp_overgrown,3p_hq_pro,1
+mp_storm,3p_hq_pro,1
+mp_strike,3p_hq_pro,1
+mp_vacant,3p_hq_pro,1
+mp_fuel2,3p_hq_pro,1
+mp_abandon,3p_hq_pro,1
+mp_trailerpark,3p_hq_pro,1
+mp_afghan,3p_sab,1
+mp_boneyard,3p_sab,1
+mp_brecourt,3p_sab,1
+mp_checkpoint,3p_sab,1
+mp_derail,3p_sab,1
+mp_estate,3p_sab,1
+mp_favela,3p_sab,1
+mp_highrise,3p_sab,1
+mp_invasion,3p_sab,1
+mp_nightshift,3p_sab,1
+mp_quarry,3p_sab,1
+mp_rundown,3p_sab,1
+mp_subbase,3p_sab,1
+mp_terminal,3p_sab,1
+mp_underpass,3p_sab,1
+mp_compact,3p_sab,1
+mp_complex,3p_sab,1
+mp_crash,3p_sab,1
+mp_overgrown,3p_sab,1
+mp_storm,3p_sab,1
+mp_strike,3p_sab,1
+mp_vacant,3p_sab,1
+mp_fuel2,3p_sab,1
+mp_abandon,3p_sab,1
+mp_trailerpark,3p_sab,1
+
+playlist 10 // classic gametype
+name english "Advanced Team Tactical"
+description english "Various team-based modes such as Arena, Global Thermonuclear War and One-Flag CTF.\n\n__________\nPlayers:6-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 6
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+rule party_minlobbytime 20
+
+mp_afghan,arena,4
+mp_boneyard,arena,4
+mp_brecourt,arena,4
+mp_checkpoint,arena,4
+mp_derail,arena,4
+mp_estate,arena,4
+mp_favela,arena,4
+mp_highrise,arena,4
+mp_invasion,arena,4
+mp_nightshift,arena,4
+mp_quarry,arena,4
+mp_rundown,arena,4
+mp_subbase,arena,4
+mp_terminal,arena,4
+mp_underpass,arena,4
+mp_rust,arena,1
+mp_afghan,oneflag,4
+mp_boneyard,oneflag,4
+mp_brecourt,oneflag,4
+mp_checkpoint,oneflag,4
+mp_derail,oneflag,4
+mp_estate,oneflag,4
+mp_favela,oneflag,4
+mp_highrise,oneflag,4
+mp_invasion,oneflag,4
+mp_nightshift,oneflag,4
+mp_quarry,oneflag,4
+mp_rundown,oneflag,4
+mp_subbase,oneflag,4
+mp_terminal,oneflag,4
+mp_underpass,oneflag,4
+mp_rust,oneflag,1
+mp_afghan,nuke,16
+mp_boneyard,nuke,16
+mp_brecourt,nuke,16
+mp_checkpoint,nuke,16
+mp_derail,nuke,16
+mp_estate,nuke,16
+mp_favela,nuke,16
+mp_highrise,nuke,16
+mp_invasion,nuke,16
+mp_nightshift,nuke,16
+mp_quarry,nuke,16
+mp_rundown,nuke,16
+mp_subbase,nuke,16
+mp_underpass,nuke,16
+mp_terminal,nuke,16
+mp_rust,nuke,1
+
+playlist 11 // ctf gametype
+name english "Domination"
+description english "3 flags in the level must be captured.  Your team gets points for having control of a flag.  The more flags your team holds, the more points you gain.\n__________\nPlayers:8-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,dom,1
+mp_boneyard,dom,1
+mp_brecourt,dom,1
+mp_checkpoint,dom,1
+mp_derail,dom,1
+mp_estate,dom,1
+mp_favela,dom,1
+mp_highrise,dom,1
+mp_invasion,dom,1
+mp_nightshift,dom,1
+mp_quarry,dom,1
+mp_rundown,dom,1
+mp_subbase,dom,1
+mp_terminal,dom,1
+mp_underpass,dom,1
+mp_compact,dom,1
+mp_complex,dom,1
+mp_crash,dom,1
+mp_overgrown,dom,1
+mp_storm,dom,1
+mp_strike,dom,1
+mp_vacant,dom,1
+mp_fuel2,dom,1
+mp_abandon,dom,1
+mp_trailerpark,dom,1
+
+playlist 12 // dd gametype
+name english "Demolition"
+description english "Attackers must destroy the 2 bomb sites within the time limit.\n\n__________\nPlayers:8-12\nRespawning is ON"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,dd,1
+mp_boneyard,dd,1
+mp_checkpoint,dd,1
+mp_derail,dd,1
+mp_estate,dd,1
+mp_favela,dd,1
+mp_highrise,dd,1
+mp_invasion,dd,1
+mp_nightshift,dd,1
+mp_quarry,dd,1
+mp_rundown,dd,1
+mp_subbase,dd,1
+mp_terminal,dd,1
+mp_underpass,dd,1
+mp_compact,dd,1
+mp_complex,dd,1
+mp_crash,dd,1
+mp_overgrown,dd,1
+mp_storm,dd,1
+mp_strike,dd,1
+mp_vacant,dd,1
+mp_fuel2,dd,1
+mp_abandon,dd,1
+mp_trailerpark,dd,1
+
+playlist 13 // sab gametype
+name english "Sabotage"
+description english "Grab the neutral bomb and plant it on the enemy's bomb site.  First to detonate wins!\n\n__________\nPlayers:8-12"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,sab,1
+mp_boneyard,sab,1
+mp_brecourt,sab,1
+mp_checkpoint,sab,1
+mp_derail,sab,1
+mp_estate,sab,1
+mp_favela,sab,1
+mp_highrise,sab,1
+mp_invasion,sab,1
+mp_nightshift,sab,1
+mp_quarry,sab,1
+mp_rundown,sab,1
+mp_subbase,sab,1
+mp_terminal,sab,1
+mp_underpass,sab,1
+mp_compact,sab,1
+mp_complex,sab,1
+mp_crash,sab,1
+mp_overgrown,sab,1
+mp_storm,sab,1
+mp_strike,sab,1
+mp_vacant,sab,1
+mp_fuel2,sab,1
+mp_abandon,sab,1
+mp_trailerpark,sab,1
+
+playlist 14 // ctf gametype
+name english "Search and Destroy"
+description english "No respawning, defend and destroy the objective.\n\n__________\nPlayers:8-12\nRespawning is OFF"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,sd,1
+mp_boneyard,sd,1
+mp_brecourt,sd,1
+mp_checkpoint,sd,1
+mp_derail,sd,1
+mp_estate,sd,1
+mp_favela,sd,1
+mp_highrise,sd,1
+mp_invasion,sd,1
+mp_nightshift,sd,1
+mp_quarry,sd,1
+mp_rundown,sd,1
+mp_subbase,sd,1
+mp_terminal,sd,1
+mp_underpass,sd,1
+mp_compact,sd,1
+mp_complex,sd,1
+mp_crash,sd,1
+mp_overgrown,sd,1
+mp_storm,sd,1
+mp_strike,sd,1
+mp_vacant,sd,1
+mp_fuel2,sd,1
+mp_abandon,sd,1
+mp_trailerpark,sd,1
+
+playlist 15 // ctf gametype
+name english "Hardcore Search and Destroy"
+description english "No respawning, defend and destroy the objective.\n\n__________\nPlayers:8-12\nRespawning is OFF\nLimited HUD\nExtra bullet damage"
+unlockxp 0
+maxparty 6
+rule party_minplayers 8
+rule party_maxplayers 12
+rule party_matchedplayercount 4
+
+mp_afghan,hc_sd,1
+mp_boneyard,hc_sd,1
+mp_brecourt,hc_sd,1
+mp_checkpoint,hc_sd,1
+mp_derail,hc_sd,1
+mp_estate,hc_sd,1
+mp_favela,hc_sd,1
+mp_highrise,hc_sd,1
+mp_invasion,hc_sd,1
+mp_nightshift,hc_sd,1
+mp_quarry,hc_sd,1
+mp_rundown,hc_sd,1
+mp_subbase,hc_sd,1
+mp_terminal,hc_sd,1
+mp_underpass,hc_sd,1
+mp_compact,hc_sd,1
+mp_complex,hc_sd,1
+mp_crash,hc_sd,1
+mp_overgrown,hc_sd,1
+mp_storm,hc_sd,1
+mp_strike,hc_sd,1
+mp_vacant,hc_sd,1
+mp_fuel2,hc_sd,1
+mp_abandon,hc_sd,1
+mp_trailerpark,hc_sd,1
+
+playlist 16 // hq gametype
+name english "Cage Match"
+description english "Old School 1v1.\n__________\nPlayers:2"
+unlockxp 0
+maxparty 1
+rule party_minplayers 2
+rule party_maxplayers 2
+rule party_matchedplayercount 1
+rule party_readypercentrequired 0
+rule party_gameStartTimerLength 8
+rule scr_game_spectatetype 0
+rule cg_everyonehearseveryone 1
+rule scr_xpscale 4
+
+mp_boneyard,cage_ffa,1
+mp_favela,cage_ffa,1
+mp_highrise,cage_ffa,1
+mp_rust,cage_ffa,1
+mp_subbase,cage_ffa,1
+mp_terminal,cage_ffa,1
