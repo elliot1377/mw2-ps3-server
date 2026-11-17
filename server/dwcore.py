@@ -219,29 +219,6 @@ def read_frames(buf):
     return out, buf
 
 
-# ---------------------------------------------------------------- NP ticket (v2.1)
-def parse_np_ticket(data):
-    """find the ticket (u32 0x21010000) and read its first section's fields in order"""
-    i = data.find(b'\x21\x01\x00\x00')
-    if i < 0:
-        return None
-    p = i + 8
-    sec_type, sec_len = struct.unpack('>HH', data[p:p + 4])
-    p += 4
-    end = p + sec_len
-    fields = []
-    while p + 4 <= end:
-        t, n = struct.unpack('>HH', data[p:p + 4])
-        fields.append((t, data[p + 4:p + 4 + n]))
-        p += 4 + n
-    names = ['serial', 'issuer', 'issued', 'expires', 'user_id', 'online_id', 'region', 'domain', 'service_id',
-             'status', 'cookie']
-    info = {k: v for k, (_, v) in zip(names, fields)}
-    info['online_id'] = info.get('online_id', b'').split(b'\0')[0].decode('ascii', 'replace')
-    info['user_id'] = struct.unpack('>Q', info['user_id'])[0] if len(info.get('user_id', b'')) == 8 else 0
-    return info
-
-
 # ---------------------------------------------------------------- bdAuthTicket (128 bytes packed, LE)
 AUTH_TICKET_MAGIC = 0xEFBDADDE
 
