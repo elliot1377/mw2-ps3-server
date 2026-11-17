@@ -27,6 +27,7 @@ import traceback
 from Crypto.Cipher import DES3
 
 import dwcore
+import npticket
 
 # folder of the server's data: next to the script, or next to the .exe when built with PyInstaller
 HERE = os.path.dirname(os.path.abspath(sys.executable if getattr(sys, 'frozen', False) else __file__))
@@ -141,7 +142,7 @@ def auth_reply(payload):
     ticket, opaque to the client - it hands it to the lobby]"""
     br = dwcore.BitReader(payload)
     _, title = br.u32()
-    np = dwcore.parse_np_ticket(payload)
+    np = npticket.parse_np_ticket(payload)
     if not np or len(np.get('cookie', b'')) != 24:
         log('auth: no NP ticket / cookie in request')
         return None
